@@ -10,12 +10,11 @@ def encode(password):
     encoded_password = ''
     for char in password:
         if char.isnumeric():
-            shifted = ord(char) + 3
+            shifted = int(char) + 3
             if shifted >= 10:
                 shifted = shifted - 10
-        encoded_password += chr(shifted)
+        encoded_password += str(shifted)
     return encoded_password
-
 
 def decode(encoded_password):
     pass
