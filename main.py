@@ -17,7 +17,16 @@ def encode(password):
     return encoded_password
 
 def decode(encoded_password):
-    pass
+    # will store decode pwd
+    decoded_password = ""
+    for digit in encoded_password:
+        # Convert digit to an int value
+        result = (int(digit) - 3 + 10) % 10
+        # converts above int to string and adds to decode pwd
+        decoded_password += str(result)
+
+    return decoded_password
+
 
 
 if __name__ == '__main__':
