@@ -7,7 +7,14 @@ def menu():
 
 
 def encode(password):
-    pass
+    encoded_password = ''
+    for char in password:
+        if char.isnumeric():
+            shifted = ord(char) + 3
+            if shifted >= 10:
+                shifted = shifted - 10
+        encoded_password += chr(shifted)
+    return encoded_password
 
 
 def decode(encoded_password):
@@ -25,7 +32,8 @@ if __name__ == '__main__':
         if menu_option == '1':
             password = input('Please enter your password to encode: ')
             encoded_password = encode(password)
-            print('Your password has been encoded and stored!')
+            print(f'Your password has been encoded and stored!:')
+            print(encoded_password)
         elif menu_option == '2':
             password = decode(encoded_password)
             print(f'The encoded password is {encoded_password}, and the original password is {password}.')
