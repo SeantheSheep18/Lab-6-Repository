@@ -18,7 +18,6 @@ def encode(password):
 
 
 def decode(encoded_password):
-    def decode(encoded_password):
     # will store decode pwd
     decoded_password = ""
     for digit in encoded_password:
